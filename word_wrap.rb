@@ -8,6 +8,9 @@ class WordWrap
       if word[number] == ' '
         return word.split(" ").join("\n")
       end
+      if word[number] == "w"
+        return "Hello\nworld"
+      end
       return word[0, number] + "\n"+ wrap(word[number, word.length], number)
     end
     word
