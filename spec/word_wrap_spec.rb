@@ -18,6 +18,9 @@ describe WordWrap do
         expect(described_class.new.wrap("coffee", 4)).to eq("coff\nee")
         expect(described_class.new.wrap("telephone", 6)).to eq("teleph\none")
       end
+      it 'returns multiple lines when integer is less than half the word length' do
+        expect(described_class.new.wrap("coffee", 2)).to eq("co\nff\nee")
+      end
     end
   end
 end
