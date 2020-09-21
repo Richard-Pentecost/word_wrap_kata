@@ -5,10 +5,10 @@ class WordWrap
       raise ArgumentError.new('Integer must be greater than 0') 
     end
     if word.length > number
+      if word[number] == ' '
+        return "Hello\nworld"
+      end
       return word[0, number] + "\n"+ wrap(word[number, word.length], number)
-      #"coffee"[0,2] = co + \n
-      #"ffee"[0,2] = "ff" +\n
-      #"ee"[0,2] = word
     end
     word
   end

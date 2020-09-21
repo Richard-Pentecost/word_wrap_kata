@@ -10,7 +10,8 @@ describe WordWrap do
         expect { described_class.new.wrap('', 0) }.to raise_error(ArgumentError)
       end   
     end
-    context 'input a string and integer' do
+
+    context 'input a string with no spaces and integer' do
       it 'returns the string when integer is equal to string length' do
         expect(described_class.new.wrap('hello', 5)).to eq('hello')
       end 
@@ -22,5 +23,12 @@ describe WordWrap do
         expect(described_class.new.wrap("coffee", 2)).to eq("co\nff\nee")
       end
     end
+
+    context 'input string with spaces and integer' do
+      it 'returns string broken on space if integer is greater than word length' do
+        expect(described_class.new.wrap('Hello world', 5)).to eq("Hello\nworld")
+      end
+    end
+
   end
 end
