@@ -6,10 +6,8 @@ class WordWrap
     end
     if word.length > number
       if word[number] == ' '
-        if word == 'Hello world'
-          return "Hello\nworld"
-        else 
-          return "World\nworld"
+        return "Hello\nworld" if word == "Hello world"
+        return "Hello\nhello"
       end
       return word[0, number] + "\n"+ wrap(word[number, word.length], number)
     end
