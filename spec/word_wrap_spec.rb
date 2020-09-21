@@ -24,9 +24,3 @@ describe WordWrap do
     end
   end
 end
-
-# describe "#ip_lookup" do
-#   it "should raise an ArgumentError error if no parameters passed" do
-#     expect { @geolocater.ip_lookup }.to raise_error(ArgumentError)
-#   end
-# end
