@@ -35,6 +35,9 @@ describe WordWrap do
       it 'returns multiple breaks on space if equal to word length, for more than 2 words' do
         expect(described_class.new.wrap('Hello hello world', 5)).to eq("Hello\nhello\nworld") 
       end
+      it 'returns break on space if integer is just greater than string length' do
+        expect(described_class.new.wrap('Hello world', 6)).to eq("Hello\nworld") 
+      end
     end
   end
 end
